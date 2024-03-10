@@ -17,7 +17,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.javadoc.failOnError>false</maven.javadoc.failOnError>
-		<javase.version>21</javase.version>
+		<javase.version>17</javase.version>
 		<maven.compiler.source>${javase.version}</maven.compiler.source>
 		<maven.compiler.target>${javase.version}</maven.compiler.target>
 		<maven.compiler.testSource>${javase.version}</maven.compiler.testSource>
@@ -140,6 +140,14 @@
 			<artifactId>jaxb-runtime</artifactId>
 			<version>3.0.2</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.knowm.xchart/xchart -->
+		<dependency>
+			<groupId>org.knowm.xchart</groupId>
+			<artifactId>xchart</artifactId>
+			<version>3.8.7</version>
+		</dependency>
+
 
 	</dependencies>
 

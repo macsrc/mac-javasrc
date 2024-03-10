@@ -1,4 +1,5 @@
-package com.learningtree.crs471;
+package lang;
+//package com.learningtree.crs471;
 
 public class NeverBuryExceptions {
 	void exceptionTranslationIsGood() {
