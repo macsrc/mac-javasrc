@@ -2,6 +2,7 @@
 /build
 /test-classes
 /target
+bin/
 *.bak
 .idea
 *.iml
@@ -44,6 +45,7 @@ build/
 
 ### Java ###
 *.class
+*.classpath
 /HelloSpringBoot/
 /baeldung-tutorials/
 /mac-mkyong-spring-boot/
