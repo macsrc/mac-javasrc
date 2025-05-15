@@ -70,7 +70,7 @@ public class BSFAction {
 
 		JButton b = new JButton("Click me!");
 		cp.add(b);				// and the button under it.
-		b.addActionListener(_ -> {
+		b.addActionListener(t -> {
 				try {
 					// When the button is pressed, run the script.
 					System.out.println("Script output: -->");
@@ -86,7 +86,7 @@ public class BSFAction {
 		// A Quit button at the bottom
 		JButton qb = new JButton("Quit");
 		cp.add(qb);
-		qb.addActionListener(_ ->  System.exit(0));
+		qb.addActionListener(t ->  System.exit(0));
 
 		// Routine JFrame setup
 		jf.pack();

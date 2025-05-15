@@ -4,13 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<properties>
-		<javase.version>11</javase.version>
+		<javase.version>24</javase.version>
 	</properties>
 
 	<parent>
 		<groupId>com.darwinsys</groupId>
 		<artifactId>javasrc</artifactId>
 		<version>1.1-SNAPSHOT</version>
+		<!--<version>1.8.0</version>-->
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 

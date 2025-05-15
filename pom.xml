@@ -88,7 +88,7 @@
 		<dependency>
 			<groupId>com.darwinsys</groupId>
 			<artifactId>darwinsys-api</artifactId>
-			<version>${darwinsys-api.version}</version>
+			<version>1.8.0</version>				<!-- Added as could not find the defined 1.9.0 version -->
 		</dependency>
 
 		<!-- Test early and often...  JUnit 5 with 4 compat.

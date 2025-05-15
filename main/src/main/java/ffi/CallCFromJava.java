@@ -68,7 +68,7 @@ public class CallCFromJava {
 					update_sig);
 			// Once again we call a C function directly from Java
 			var retStr = (MemorySegment)getter.invokeExact(2L);
-			Consumer<MemorySegment> cleanup = _ -> {
+			Consumer<MemorySegment> cleanup = t -> {
 				// Maybe some cleanup here what we had allocated in native space
 			};
 			retStr = retStr.reinterpret(newSketch.length() + 1, arena, cleanup);

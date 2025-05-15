@@ -125,7 +125,8 @@
 					<sourceEncoding>utf-8</sourceEncoding>
 					<minimumTokens>100</minimumTokens>
 					<format>txt</format>
-					<targetJdk>${javase.version}</targetJdk>
+					<!-- <targetJdk>${javase.version}</targetJdk> -->
+					<targetJdk>21</targetJdk>
 					<excludes>
 						<exclude>**/EuroLanguage.java</exclude>
 						<exclude>**/generated/*.java</exclude>
