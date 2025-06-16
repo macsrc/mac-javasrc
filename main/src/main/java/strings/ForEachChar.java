@@ -7,7 +7,7 @@ public class ForEachChar {
 
 		// Does not compile, Strings are not iterable
 		// for (char ch : mesg) {
-		//		System.out.println(ch);
+		// System.out.println(ch);
 		// }
 
 		System.out.println("Using toCharArray:");
@@ -16,7 +16,7 @@ public class ForEachChar {
 		}
 
 		System.out.println("Using Streams:");
-		mesg.chars().forEach(c -> System.out.println((char)c));
+		mesg.chars().forEach(c -> System.out.println((char) c));
 	}
 }
 // end::main[]

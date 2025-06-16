@@ -3,13 +3,15 @@ package structure;
 import java.util.Arrays;
 import java.util.Random;
 
-/** Array Hunt "game" (pathetic: computer plays itself).
+/**
+ * Array Hunt "game" (pathetic: computer plays itself).
+ * 
  * @author Ian Darwin
  */
 // tag::main[]
-public class ArrayHunt  {
+public class ArrayHunt {
 	/** the maximum (and actual) number of random ints to allocate */
-	protected final static int MAX    = 4000;
+	protected final static int MAX = 4000;
 	/** the value to look for */
 	protected final static int NEEDLE = 1999;
 	int[] haystack;
@@ -22,11 +24,10 @@ public class ArrayHunt  {
 		else {
 			int won = 0;
 			int games = Integer.parseInt(argv[0]);
-			for (int i=0; i<games; i++)
+			for (int i = 0; i < games; i++)
 				if (h.play())
 					++won;
-			System.out.println("Computer won " + won + 
-				" out of " + games + ".");
+			System.out.println("Computer won " + won + " out of " + games + ".");
 		}
 	}
 
@@ -41,8 +42,8 @@ public class ArrayHunt  {
 		int i;
 
 		// Fill the array with random data (hay?)
-		for (i=0; i<MAX; i++) {
-			haystack[i] = (int)(r.nextFloat() * MAX);
+		for (i = 0; i < MAX; i++) {
+			haystack[i] = (int) (r.nextFloat() * MAX);
 		}
 
 		// Precondition for binary search is that data be sorted!
@@ -51,14 +52,12 @@ public class ArrayHunt  {
 		// Look for needle in haystack
 		i = Arrays.binarySearch(haystack, NEEDLE);
 
-		if (i >= 0) {		// Found it, we win.
-			System.out.println("Value " + NEEDLE +
-				" occurs at haystack[" + i + "]");
+		if (i >= 0) { // Found it, we win.
+			System.out.println("Value " + NEEDLE + " occurs at haystack[" + i + "]");
 			return true;
-		} else {		// Not found, we lose.
-			System.out.println("Value " + NEEDLE +
-				" does not occur in haystack; nearest value is " +
-				haystack[-(i+2)] + " (found at " + -(i+2) + ")");
+		} else { // Not found, we lose.
+			System.out.println("Value " + NEEDLE + " does not occur in haystack; nearest value is " + haystack[-(i + 2)]
+					+ " (found at " + -(i + 2) + ")");
 			return false;
 		}
 	}

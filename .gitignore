@@ -1,8 +1,0 @@
-.settings
-/build
-/test-classes
-/target
-*.bak
-.idea
-*.iml
-WIP

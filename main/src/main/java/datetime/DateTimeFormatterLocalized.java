@@ -13,7 +13,7 @@ public class DateTimeFormatterLocalized {
 		var dt = ZonedDateTime.now();
 
 		for (Locale l :
-			List.of(Locale.CANADA, Locale.FRANCE, Locale.UK, Locale.TAIWAN)) {
+			List.of(Locale.US, Locale.FRANCE, Locale.UK, Locale.TAIWAN)) {
 			Locale.setDefault(l);
 			DateTimeFormatter f = 
 				DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);

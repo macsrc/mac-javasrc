@@ -1,27 +1,32 @@
 package structure;
 
-/** A lax Stack implementation.
+/**
+ * A lax Stack implementation.
  */
 @SuppressWarnings("unchecked")
 // tag::main[]
 public class MyStack<T> implements SimpleStack<T> {
-	
+
+	public static void main(String[] args) {
+		MyStack ms = new MyStack<>();
+
+	}
+
 	private int depth = 0;
 	public static final int DEFAULT_INITIAL = 10;
 	private T[] stack;
-	
+
 	public MyStack() {
 		this(DEFAULT_INITIAL);
 	}
 
 	public MyStack(int howBig) {
 		if (howBig <= 0) {
-			throw new IllegalArgumentException(
-			howBig + " must be positive, but was " + howBig);
+			throw new IllegalArgumentException(howBig + " must be positive, but was " + howBig);
 		}
-		stack = (T[])new Object[howBig];
+		stack = (T[]) new Object[howBig];
 	}
-	
+
 	@Override
 	public boolean empty() {
 		return depth == 0;
@@ -42,16 +47,16 @@ public class MyStack<T> implements SimpleStack<T> {
 		stack[depth] = null;
 		return tmp;
 	}
-	
+
 	/** peek - return the top element but don't remove it */
 	@Override
 	public T peek() {
 		if (depth == 0) {
 			return null;
 		}
-		return stack[depth-1];
+		return stack[depth - 1];
 	}
-	
+
 	public boolean hasNext() {
 		return depth > 0;
 	}
@@ -64,4 +69,5 @@ public class MyStack<T> implements SimpleStack<T> {
 		return depth;
 	}
 }
+
 // end::main[]

@@ -26,14 +26,16 @@ public class StringAlign extends Format {
 	/** Current max length */
 	private int maxChars;
 
-    /** Construct a StringAlign formatter; length and alignment are
-     * passed to the Constructor instead of each format() call as the
-     * expected common use is in repetitive formatting e.g., page numbers.
-     * @param maxChars - the maximum length of the output
-     * @param just - one of the enum values LEFT, CENTER or RIGHT
-     */
+	/**
+	 * Construct a StringAlign formatter; length and alignment are passed to the
+	 * Constructor instead of each format() call as the expected common use is in
+	 * repetitive formatting e.g., page numbers.
+	 * 
+	 * @param maxChars - the maximum length of the output
+	 * @param just     - one of the enum values LEFT, CENTER or RIGHT
+	 */
 	public StringAlign(int maxChars, Justify just) {
-		switch(just) {
+		switch (just) {
 		case LEFT:
 		case CENTER:
 		case RIGHT:
@@ -48,44 +50,44 @@ public class StringAlign extends Format {
 		this.maxChars = maxChars;
 	}
 
-	/** Format a String.
-	 * If the input is too long, it will be returned, truncated.
-     * @param input - the string to be aligned.
-     * @parm where - the StringBuilder to append it to.
-     * @param ignore - a FieldPosition (may be null, not used but
-     * specified by the general contract of Format).
-	 * @return A StringBufffer with the formatted string; sadly not
-	 * the newer StringBuilder because the old interface is cast in stone.
-     */
+	/**
+	 * Format a String. If the input is too long, it will be returned, truncated.
+	 * 
+	 * @param input - the string to be aligned.
+	 * @parm where - the StringBuilder to append it to.
+	 * @param ignore - a FieldPosition (may be null, not used but specified by the
+	 *               general contract of Format).
+	 * @return A StringBufffer with the formatted string; sadly not the newer
+	 *         StringBuilder because the old interface is cast in stone.
+	 */
 	@Override
-	public StringBuffer format(
-		Object input, StringBuffer where, FieldPosition ignore)  {
+	public StringBuffer format(Object input, StringBuffer where, FieldPosition ignore) {
 
 		String s = input.toString();
 		String wanted = s.substring(0, Math.min(s.length(), maxChars));
 
 		// Get the spaces in the right place.
 		switch (just) {
-			case RIGHT:
-				pad(where, maxChars - wanted.length());
-				where.append(wanted);
-				break;
-			case CENTER:
-				int toAdd = maxChars - wanted.length();
-				pad(where, toAdd/2);
-				where.append(wanted);
-				pad(where, toAdd - toAdd/2);
-				break;
-			case LEFT:
-				where.append(wanted);
-				pad(where, maxChars - wanted.length());
-				break;
-			}
+		case RIGHT:
+			pad(where, maxChars - wanted.length());
+			where.append(wanted);
+			break;
+		case CENTER:
+			int toAdd = maxChars - wanted.length();
+			pad(where, toAdd / 2);
+			where.append(wanted);
+			pad(where, toAdd - toAdd / 2);
+			break;
+		case LEFT:
+			where.append(wanted);
+			pad(where, maxChars - wanted.length());
+			break;
+		}
 		return where;
 	}
 
 	protected final void pad(StringBuffer to, int howMany) {
-		for (int i=0; i<howMany; i++)
+		for (int i = 0; i < howMany; i++)
 			to.append(' ');
 	}
 
@@ -95,7 +97,7 @@ public class StringAlign extends Format {
 	}
 
 	/** ParseObject is required, but not useful here. */
-	public Object parseObject(String source, ParsePosition pos)  {
+	public Object parseObject(String source, ParsePosition pos) {
 		return source;
 	}
 }

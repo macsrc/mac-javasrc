@@ -1,4 +1,4 @@
-package nio;
+package dir_file;
 
 // tag::main[]
 import java.nio.file.Path;

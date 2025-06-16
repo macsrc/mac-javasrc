@@ -2,7 +2,8 @@ package strings;
 
 import java.util.StringTokenizer;
 
-/** Show using a StringTokenizer including getting the delimiters back.
+/**
+ * Show using a StringTokenizer including getting the delimiters back.
  * StringTokenizer is "discouraged" in new code, but not yet deprecated.
  */
 // tag::main[]
@@ -23,11 +24,10 @@ public class StrTokDemo4 {
 		while (st.hasMoreTokens()) {
 			String s = st.nextToken();
 			if (s.equals(DELIM)) {
-				if (i++>=MAXFIELDS)
-					// This is messy: See StrTokDemo4b which uses 
+				if (i++ >= MAXFIELDS)
+					// This is messy: See StrTokDemo4b which uses
 					// a List to allow any number of fields.
-					throw new IllegalArgumentException("Input line " +
-						line + " has too many fields");
+					throw new IllegalArgumentException("Input line " + line + " has too many fields");
 				continue;
 			}
 			results[i] = s;
